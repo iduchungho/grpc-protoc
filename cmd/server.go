@@ -3,7 +3,7 @@ package cmd
 import (
 	"log"
 	"modules/v2/modules/service"
-	"modules/v2/pkg/plugin/v1/greeter"
+	"modules/v2/pkg/generated/v1/greeter"
 	"net"
 
 	"google.golang.org/grpc"

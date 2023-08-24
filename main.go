@@ -16,8 +16,8 @@ var (
 func init() {
 	// Initialise a CLI app
 	client = cli.NewApp()
-	client.Name = "grpc plugin"
-	client.Usage = "grpc plugin client and server"
+	client.Name = "grpc generated"
+	client.Usage = "grpc generated client and server"
 	client.Version = "0.0.1"
 }
 
