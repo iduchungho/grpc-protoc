@@ -40,7 +40,7 @@ func main() {
 			Action: func(c *cli.Context) error {
 				log.Printf("run cli %s", c.App.Name)
 				server := cmd.NewServer()
-				return server.Listen()
+				return server.GrpcListen()
 			},
 		},
 	}

@@ -1,21 +1,29 @@
 package cmd
 
 import (
+	"fmt"
 	"log"
 	"modules/v2/modules/service"
+	"modules/v2/pkg/config"
 	"modules/v2/pkg/generated/v1/greeter"
 	"net"
 
 	"google.golang.org/grpc"
 )
 
-const host = "0.0.0.0:5000"
-
 type Server struct {
+	address string
 }
 
-func (s *Server) Listen() error {
-	_listener, err := net.Listen("tcp", host)
+func NewServer() *Server {
+	hostAddr := fmt.Sprintf("%s:%s", config.Host, config.Port)
+	return &Server{
+		address: hostAddr,
+	}
+}
+
+func (s *Server) GrpcListen() error {
+	_listener, err := net.Listen("tcp", s.address)
 	if err != nil {
 		return err
 	}
@@ -23,8 +31,4 @@ func (s *Server) Listen() error {
 	greeter.RegisterGreeterServer(_grpc, &service.Greeter{})
 	log.Printf("grpc listening on %s\n", _listener.Addr())
 	return _grpc.Serve(_listener)
-}
-
-func NewServer() *Server {
-	return &Server{}
 }

@@ -2,7 +2,9 @@ package cmd
 
 import (
 	"context"
+	"fmt"
 	"log"
+	"modules/v2/pkg/config"
 	"modules/v2/pkg/generated/v1/greeter"
 	"time"
 
@@ -11,14 +13,18 @@ import (
 )
 
 type Client struct {
+	address string
 }
 
 func NewClient() *Client {
-	return &Client{}
+	hostAddr := fmt.Sprintf("%s:%s", config.Host, config.Port)
+	return &Client{
+		address: hostAddr,
+	}
 }
 
 func (c *Client) SayHelloService() error {
-	conn, err := grpc.Dial(host, grpc.WithTransportCredentials(insecure.NewCredentials()))
+	conn, err := grpc.Dial(c.address, grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
 		return err
 	}

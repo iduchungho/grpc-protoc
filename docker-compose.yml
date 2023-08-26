@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  services-server:
+    image: modules-services:latest
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 5000:5000
