@@ -30,7 +30,10 @@ func main() {
 			Action: func(c *cli.Context) error {
 				log.Printf("run cli %s", c.App.Name)
 				client := cmd.NewClient()
-				client.SayHelloService()
+				err := client.SayHelloService()
+				if err != nil {
+					return err
+				}
 				return nil
 			},
 		},
