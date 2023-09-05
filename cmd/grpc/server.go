@@ -1,9 +1,9 @@
-package cmd
+package grpc
 
 import (
 	"fmt"
 	"log"
-	"modules/api/service"
+	"modules/app/service"
 	"modules/pkg/generated/v1/greeter"
 	"modules/pkg/config"
 	"net"

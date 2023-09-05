@@ -2,7 +2,7 @@ package main
 
 import (
 	"log"
-	"modules/cmd"
+	"modules/cmd/grpc"
 	"os"
 
 	_ "github.com/joho/godotenv/autoload" // load .env file automatically
@@ -29,7 +29,7 @@ func main() {
 			Usage: "launch function",
 			Action: func(c *cli.Context) error {
 				log.Printf("run cli %s", c.App.Name)
-				client := cmd.NewClient()
+				client := grpc.NewClient()
 				err := client.SayHelloService()
 				if err != nil {
 					return err
@@ -42,7 +42,7 @@ func main() {
 			Usage: "start gRPC server",
 			Action: func(c *cli.Context) error {
 				log.Printf("run cli %s", c.App.Name)
-				server := cmd.NewServer()
+				server := grpc.NewServer()
 				return server.GrpcListen()
 			},
 		},

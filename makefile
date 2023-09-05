@@ -14,3 +14,8 @@ protoc:
 setup:
 	go install google.golang.org/protobuf/cmd/protoc-gen-go
 	go install google.golang.org/grpc/cmd/protoc-gen-go-grpc
+
+client:
+	go run cmd/main.go client
+server:
+	go run cmd/main.go server
