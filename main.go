@@ -2,7 +2,7 @@ package main
 
 import (
 	"log"
-	"modules/v2/cmd"
+	"modules/cmd"
 	"os"
 
 	_ "github.com/joho/godotenv/autoload" // load .env file automatically

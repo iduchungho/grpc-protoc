@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 	"log"
-	"modules/v2/pkg/config"
-	"modules/v2/pkg/generated/v1/greeter"
+	"modules/internal/pkg/config"
+	"modules/internal/generated/v1/greeter"
 	"time"
 
 	"google.golang.org/grpc"
