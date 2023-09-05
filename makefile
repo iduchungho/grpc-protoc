@@ -1,5 +1,5 @@
-GENERATED_DIR=internal/generated
-PROTO_DIR=internal/proto
+GENERATED_DIR=pkg/generated
+PROTO_DIR=proto
 
 protoc:
 	@if [ -d "$(GENERATED_DIR)" ]; then \
@@ -7,9 +7,9 @@ protoc:
 	fi
 	mkdir -p $(GENERATED_DIR)
 
-	protoc --go_out=internal/generated \
-    --go-grpc_out=internal/generated \
-    internal/proto/*.proto
+	protoc --go_out=$(GENERATED_DIR) \
+    --go-grpc_out=$(GENERATED_DIR) \
+    $(PROTO_DIR)/*.proto
 
 setup:
 	go install google.golang.org/protobuf/cmd/protoc-gen-go

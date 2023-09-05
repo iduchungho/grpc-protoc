@@ -3,7 +3,7 @@ package service
 import (
 	"context"
 	"log"
-	"modules/internal/generated/v1/greeter"
+	"modules/pkg/generated/v1/greeter"
 	"time"
 )
 

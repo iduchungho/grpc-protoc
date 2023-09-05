@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v4.24.2
-// source: internal/proto/greeter.proto
+// source: proto/greeter.proto
 
 package greeter
 
@@ -107,5 +107,5 @@ var Greeter_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "internal/proto/greeter.proto",
+	Metadata: "proto/greeter.proto",
 }
