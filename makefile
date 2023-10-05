@@ -1,5 +1,5 @@
-GENERATED_DIR=pkg/generated
-PROTO_DIR=proto
+GENERATED_DIR=tools/generated
+PROTO_DIR=tools/proto
 
 protoc:
 	@if [ -d "$(GENERATED_DIR)" ]; then \

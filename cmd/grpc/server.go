@@ -3,9 +3,9 @@ package grpc
 import (
 	"fmt"
 	"log"
-	"modules/app/service"
-	"modules/pkg/generated/v1/greeter"
+	"modules/internal/service"
 	"modules/pkg/config"
+	"modules/tools/generated/v1/greeter"
 	"net"
 
 	"google.golang.org/grpc"

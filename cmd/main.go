@@ -14,7 +14,7 @@ var (
 )
 
 func init() {
-	// Initialise a CLI app
+	// Initialise a CLI internal
 	client = cli.NewApp()
 	client.Name = "grpc generated"
 	client.Usage = "grpc generated client and server"
@@ -48,6 +48,6 @@ func main() {
 		},
 	}
 
-	// Run the CLI app
+	// Run the CLI internal
 	client.Run(os.Args)
 }

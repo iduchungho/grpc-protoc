@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 	"modules/pkg/config"
-	"modules/pkg/generated/v1/greeter"
+	greeter2 "modules/tools/generated/v1/greeter"
 	"time"
 
 	"google.golang.org/grpc"
@@ -34,11 +34,11 @@ func (c *Client) SayHelloService() error {
 			log.Fatal(err)
 		}
 	}(conn)
-	_ctx := greeter.NewGreeterClient(conn)
+	_ctx := greeter2.NewGreeterClient(conn)
 
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
-	r, err := _ctx.SayHello(ctx, &greeter.MessageRequest{
+	r, err := _ctx.SayHello(ctx, &greeter2.MessageRequest{
 		Message:   "Hello from service provider",
 		Timestamp: time.Now().UTC().Unix(),
 	})
