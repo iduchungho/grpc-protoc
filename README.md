@@ -1,4 +1,4 @@
-# GRPC - MICROSERVICE
+# PROTOSERVICE
 ## Folder structure
 
 ### ./app
